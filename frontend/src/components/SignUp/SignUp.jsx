@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import './SignUp.css'
-
-function SignUp({ showSignUp, setShowSignUp, setIsLoggedIn,setShowLogin }) {
+import { StoreContext } from '../../context/StoreContext';
+import axios from 'axios';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+function SignUp({ showSignUp, setShowSignUp, setIsLoggedIn,setShowLogin,setUserName }) {
+  const {url,setToken}=useContext(StoreContext);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -21,11 +25,27 @@ function SignUp({ showSignUp, setShowSignUp, setIsLoggedIn,setShowLogin }) {
     });
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    setIsLoggedIn(true);
-    setShowSignUp(false);
-  };
+    try{
+      const res=await axios.post(`${url}/api/user/register`,formData);
+    if(res.data.success){
+      localStorage.setItem("token",res.data.token);
+      setToken(res.data.token);
+      setIsLoggedIn(true);
+      setShowSignUp(false);
+      toast.success(res.data.message);
+      setUserName(formData.fullName);
+    }
+    else {
+      toast.error(res.data.message); 
+    }
+    }
+    catch (error) {
+      console.error("Error while Signing Up", error);
+      toast.error("An error occurred while signing up. Please try again."); // Show custom error message
+    }
+    };
   
   return (
     <div className="signup-modal-overlay">

@@ -1,0 +1,58 @@
+/* Admin.css */
+.admin-container {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    padding: 30px; /* Increased padding for better spacing */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the heading */
+  }
+  
+  .admin-heading {
+    color: #333; /* Darker heading text */
+    margin-bottom: 20px;
+    font-size: 2em; /* Larger font size for emphasis */
+    font-weight: bold;
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .admin-table thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .admin-table th {
+    font-weight: bold;
+  }
+  
+  .admin-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .admin-table tbody tr:hover {
+    background-color: #e0f7fa;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-table td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin-table tbody tr:last-child td {
+    border-bottom: none;
+  }

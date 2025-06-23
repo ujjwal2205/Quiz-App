@@ -16,7 +16,8 @@
 }
 
 .login-modal {
-  background: white;
+  background-color: var(--bg-color); /* Background color of Navbar */
+  color: var(--text-color);
   border-radius: 12px;
   width: 90%;
   max-width: 400px;
@@ -155,6 +156,47 @@
   text-decoration: underline;
   cursor: pointer;
 }
+/* Additional styles for the role dropdown */
+.input-group select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.input-group select:focus {
+  border-color: #3a7bd5;
+  box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.1);
+  outline: none;
+  background-color: #fff;
+}
+
+.input-group select option {
+  padding: 0.8rem 1rem;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Style for the dropdown in the select box */
+.input-group select option:hover {
+  background-color: #f1f1f1;
+}
+
+.input-group label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; }

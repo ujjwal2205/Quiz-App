@@ -15,7 +15,8 @@
 }
 
 .signup-modal {
-  background: white;
+  background-color: var(--bg-color); /* Background color of Navbar */
+  color: var(--text-color);
   border-radius: 12px;
   width: 90%;
   max-width: 450px;

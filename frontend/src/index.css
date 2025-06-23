@@ -5,10 +5,31 @@
   box-sizing:border-box;
   color:#0A0A23;
 }
-body{
-  min-height: 100vh;
-}
 a{
   text-decoration: none;
   color:inherit;
+}
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-color: #f1f1f1;
+}
+
+[data-theme='dark'] {
+  --bg-color: #1f1f1f;
+  --text-color: #ffffff;
+  --card-color: #2c2c2c;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  min-height: 100vh;
+}
+
+.quiz-question-card {
+  background-color: var(--card-color);
+  padding: 20px;
+  border-radius: 10px;
 }
