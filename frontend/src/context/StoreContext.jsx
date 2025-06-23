@@ -5,7 +5,7 @@ export const StoreContext = createContext();
 export const StoreProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');
   const[token,setToken]=useState(' ');
-  const url="http://localhost:4000";
+  const url = "https://quiz-app-lhqj.onrender.com";
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
