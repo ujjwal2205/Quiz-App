@@ -19,6 +19,9 @@ app.use("/api/quizId",QuizDataRouter);
 app.use("/api/questionsRouter",QuizQuestionsRouter);
 app.use("/api/user",userRouter)
 app.use("/api/admin",Adminrouter);
+app.get("/",(req,res)=>{
+    res.send("API Working");
+})
 app.listen(port,()=>{
     console.log(`Server started on http://localhost:${port}`)
 })
